@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 340px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    padding: 20px;
+    background: #fafafa;
+    color: #222;
+  }
+  h1 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .subtitle {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 16px;
+  }
+  #status {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 12px;
+    min-height: 18px;
+  }
+  #status.error { color: #c0392b; }
+  #status.success { color: #27ae60; }
+  #progress-wrap {
+    width: 100%;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    display: none;
+  }
+  #progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    border-radius: 4px;
+    transition: width 0.15s ease;
+  }
+  button {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #3498db;
+    color: #fff;
+    transition: background 0.2s;
+  }
+  button:hover { background: #2980b9; }
+  button:disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
+  }
+  #book-info {
+    font-size: 13px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-bottom: 16px;
+    display: none;
+  }
+  #book-info .label { color: #888; font-size: 11px; }
+  #book-info .value { font-weight: 600; margin-bottom: 6px; }
+</style>
+</head>
+<body>
+  <h1>📖 Boardbook Exporter</h1>
+  <p class="subtitle">Export Van In boardbooks to PDF</p>
+
+  <div id="book-info">
+    <div class="label">Book</div>
+    <div class="value" id="book-name">-</div>
+    <div class="label">Pages</div>
+    <div class="value" id="book-pages">-</div>
+  </div>
+
+  <div id="status">Detecting book...</div>
+
+  <div id="progress-wrap">
+    <div id="progress-bar"></div>
+  </div>
+
+  <button id="export-btn" disabled>Export to PDF</button>
+
+  <script src="lib/pdf-lib.min.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

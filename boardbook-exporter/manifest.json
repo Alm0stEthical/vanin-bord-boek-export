@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Boardbook PDF Exporter",
+  "version": "1.0",
+  "description": "Export Van In boardbooks (boardbooks.vanin.be) to PDF with one click.",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["https://boardbooks.vanin.be/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
